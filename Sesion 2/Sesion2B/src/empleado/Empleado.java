@@ -33,7 +33,6 @@ public class Empleado {
 			retencion = (float) 0.15;
 		else if(nominaBruta >= 2500)
 			retencion = (float) 0.18;
-		
 		salarioNeto = nominaBruta*(1-retencion);
 		return salarioNeto;
 	}
