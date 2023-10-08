@@ -10,30 +10,32 @@ import org.junit.jupiter.api.Test;
 
 import cmepps.Calculadora;
 
+/**
+ * Esta clase realiza las pruebas unitarias de los metodos de la clase Calculadora.
+ * @author David Prieto Araujo
+ */
 class CalculadoraTest {
 
 	static int value1, value2;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		System.out.println("Before All");
+		System.out.println("->Ejecutando Before all: configuracion antes de todas las pruebas");
 	}
 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
-		System.out.println("After All");
+		System.out.println("->Ejecutando After all: limpieza despues de todas las pruebas");
 	}
 
 	@BeforeEach
 	void setUp() throws Exception {
-		System.out.println("Before each");
-		value1 = 5;
-		value2 = 3;
+		System.out.println("->Ejecutando Before each: configuracion antes de cada prueba");
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		System.out.println("After each");
+		System.out.println("->Ejecutando After each: limpieza despues de cada prueba");
 	}
 
 	@Test
@@ -70,5 +72,4 @@ class CalculadoraTest {
 		int actual = Calculadora.multiplica(value1, value2);
 		assertEquals(expected, actual);
 	}
-
 }
