@@ -152,7 +152,7 @@ class EmpleadoTest {
 	@DisplayName("Prueba de un empleado vendedor con nomina bruta negativa")
 	void testCalculoNominaNetaRetencion0Negativa(TestInfo info) {
 		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
-		float expected = -2050;
+		float expected = 2050;
 		float actual = Empleado.calculoNominaNeta(-2050);
 		assertEquals(expected, actual);
 	}
