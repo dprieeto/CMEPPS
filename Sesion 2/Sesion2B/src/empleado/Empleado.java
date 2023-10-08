@@ -1,10 +1,25 @@
 package empleado;
 
+/**
+ * Esta clase contiene dos metodos para el calculo de la nomina bruta y neta de un empleado.
+ * @author David Prieto Araujo
+ *
+ */
 public class Empleado {
+	/**
+	 * Tipo de empleado.
+	 */
 	public enum TipoEmpleado {
 		Vendedor, Encargado
 	};
 	
+	/**
+	 * Calculo de la nomina bruta de un empleado.
+	 * @param tipo
+	 * @param ventasMes
+	 * @param horasExtra
+	 * @return
+	 */
 	public static float calculoNominaBruta(TipoEmpleado tipo, float ventasMes, float horasExtra) {
 		float salariobase = 0, primas = 0, extras = 0;
 		final int PRECIO_HE = 30;	
@@ -19,16 +34,17 @@ public class Empleado {
 			primas = 200;
 		else if (ventasMes >= 1000)
 			primas = 100;
-		else if(ventasMes < 0)
-			primas = 0;
 		//determinacion extras
-		if(horasExtra < 0)
-			horasExtra = 0;
 		extras = horasExtra*PRECIO_HE;
 				
 		return salariobase + primas + extras;
 	}
 	
+	/**
+	 * Calculo del salario neto del empleado.
+	 * @param nominaBruta
+	 * @return
+	 */
 	public static float calculoNominaNeta(float nominaBruta) {
 		if(nominaBruta <0)
 			nominaBruta = 0;
@@ -41,7 +57,5 @@ public class Empleado {
 			retencion = (float) 0.18;
 		salarioNeto = nominaBruta*(1-retencion);
 		return salarioNeto;
-	}
-	
-	
+	}	
 }
