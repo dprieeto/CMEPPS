@@ -54,8 +54,7 @@ public class Cuenta {
 	 * @return the saldo
 	 */
 	public double getSaldo() {
-		return 2500;
-		//return saldo;
+		return saldo;
 	}
 
 	/**
@@ -66,10 +65,10 @@ public class Cuenta {
 	}
 
 	public void ingresar(double x) {
-		
+		this.setSaldo( x + this.getSaldo());
 	}
 	
 	public void retirar(double x) {
-		
+		this.setSaldo(this.getSaldo() - x);
 	}
 }

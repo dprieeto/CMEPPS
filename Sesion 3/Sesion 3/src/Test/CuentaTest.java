@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 
 import Sesion3.Cuenta;
 
@@ -36,18 +37,25 @@ class CuentaTest {
 	}
 	
 	@Test
-	void testIngresar() {
-		
-		cuenta.ingresar(2500);
-		assertEquals(2500, cuenta.getSaldo());
+	void testIngresar(TestInfo info) {
+		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
+		double ingreso = 2500;
+		double saldo = cuenta.getSaldo();
+		cuenta.ingresar(ingreso);
+		saldo += ingreso;
+		assertEquals(saldo, cuenta.getSaldo());
 	}
 
 	@Test
-	void testRetirar() {
-		/*
+	void testRetirar(TestInfo info) {
+		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
+		double retirar = 500;
 		double saldo = cuenta.getSaldo();
-		cuenta.retirar(500);
-		*/
+		cuenta.retirar(retirar);
+		saldo -= retirar;
+		assertEquals(saldo, cuenta.getSaldo());
 	}
-
+	
+	// hacwer en la version 4, un caso de prueba(1 metodo que haga toda la version 4), hacer list movimiento
+	// signo enum [D,h] -> D= cargo || H=ingreso
 }
