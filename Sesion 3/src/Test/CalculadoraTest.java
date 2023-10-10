@@ -58,7 +58,7 @@ class CalculadoraTest {
 		assertEquals(expected, actual);
 	}
 
-	/*
+	
 	@Test
 	@DisplayName("Realiza la prueba de division")
 	void testDivide(TestInfo info) {
@@ -68,6 +68,7 @@ class CalculadoraTest {
 		assertEquals(expected, actual);
 	}
 	
+	/*
 	@Test
 	@DisplayName("Realiza la prueba de division por 0")
 	void testDividePor0(TestInfo info) {
@@ -76,7 +77,8 @@ class CalculadoraTest {
 		int actual = Calculadora.divide(value1, 0);
 		assertEquals(expected, actual);
 	}
-
+	*/
+	
 	@Test
 	@DisplayName("Realiza la prueba de multiplicacion")
 	void testMultiplica(TestInfo info) {
@@ -85,5 +87,5 @@ class CalculadoraTest {
 		int actual = Calculadora.multiplica(value1, value2);
 		assertEquals(expected, actual);
 	}
-	*/
+	
 }
