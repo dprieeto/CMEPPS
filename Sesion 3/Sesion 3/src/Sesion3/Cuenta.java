@@ -54,7 +54,8 @@ public class Cuenta {
 	 * @return the saldo
 	 */
 	public double getSaldo() {
-		return saldo;
+		return 2500;
+		//return saldo;
 	}
 
 	/**

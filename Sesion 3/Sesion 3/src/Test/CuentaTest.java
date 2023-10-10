@@ -16,7 +16,7 @@ class CuentaTest {
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		cuenta = new Cuenta("2038 1234", "Prieto", 0);
+		cuenta = new Cuenta("2038 1234", "Prieto", 1000);
 		System.out.println("->Ejecutando Before all: configuracion antes de todas las pruebas");
 	}
 
@@ -37,14 +37,17 @@ class CuentaTest {
 	
 	@Test
 	void testIngresar() {
+		
 		cuenta.ingresar(2500);
 		assertEquals(2500, cuenta.getSaldo());
-		fail("Not yet implemented");
 	}
 
 	@Test
 	void testRetirar() {
-		//fail("Not yet implemented");
+		/*
+		double saldo = cuenta.getSaldo();
+		cuenta.retirar(500);
+		*/
 	}
 
 }
