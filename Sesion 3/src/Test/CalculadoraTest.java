@@ -65,7 +65,7 @@ class CalculadoraTest {
 		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
 		int expected =1;
 		int actual = Calculadora.divide(value1, value2);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual);		
 	}
 	
 	/*
