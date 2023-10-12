@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 
@@ -37,6 +38,7 @@ class CuentaTest {
 	}
 	
 	@Test
+	@DisplayName("Realiza una prueba de ingreso de dinero a una cuenta.")
 	void testIngresar(TestInfo info) {
 		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
 		double ingreso = 2500;
@@ -47,6 +49,7 @@ class CuentaTest {
 	}
 
 	@Test
+	@DisplayName("Realiza una prueba de retirada de dinero.")
 	void testRetirar(TestInfo info) {
 		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
 		double retirar = 500;
@@ -57,5 +60,10 @@ class CuentaTest {
 	}
 	
 	// hacwer en la version 4, un caso de prueba(1 metodo que haga toda la version 4), hacer list movimiento
-	// signo enum [D,h] -> D= cargo || H=ingreso
+	@Test
+	@DisplayName("Realiza un prueba de las transacciones")
+	void testMovimiento(TestInfo info) {
+		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
+		
+	}
 }

@@ -1,5 +1,8 @@
 package Sesion3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Clase utilizada para la gestion de la cuenta de un cliente de un banco.
  * @author David Prieto Araujo
@@ -8,6 +11,7 @@ public class Cuenta {
 	
 	private String numero, titular;
 	private double saldo;
+	private List<Movimiento> mMovimiento;
 
 	/**
 	 * Constructor de la clase. Inicializa las variables.
@@ -20,6 +24,7 @@ public class Cuenta {
 		this.numero = numero;
 		this.titular = titular;
 		this.saldo = saldo;
+		this.mMovimiento = new ArrayList<>();
 	}
 
 	/**
