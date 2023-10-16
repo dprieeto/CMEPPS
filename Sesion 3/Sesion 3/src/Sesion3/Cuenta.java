@@ -84,4 +84,16 @@ public class Cuenta {
 	public void retirar(double x) {
 		this.setSaldo(this.getSaldo() - x);
 	}
+	
+	/**
+	 * Verifica si se puede hacer un reintegro siempre que el saldo final sea menor a -500€.
+	 * Devuelve true si se puede hacer el reintegro, false en caso contrario.
+	 * @param reintegro
+	 * @return
+	 */
+	private boolean permiteDescubierto(double reintegro) {
+		boolean permitir = false;
+		
+		return permitir;
+	}
 }
