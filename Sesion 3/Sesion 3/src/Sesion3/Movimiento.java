@@ -72,14 +72,17 @@ public class Movimiento {
 	}
 	
 	/**
-	 * Verifica si se puede hacer un reintegro siempre que el saldo final sea menor a -500€.
-	 * Devuelve true si se puede hacer el reintegro, false en caso contrario.
-	 * @param reintegro
-	 * @return
+	 * @return the signo. Devuelve si es un ingreso o un reintegro.
 	 */
-	private boolean permiteDescubierto(double reintegro) {
-		boolean permitir = false;
-		
-		return permitir;
+	public Signo getSigno() {
+		return signo;
 	}
+
+	/**
+	 * @param signo. Modifica el signo de la transaccion.
+	 */
+	public void setSigno(Signo signo) {
+		this.signo = signo;
+	}
+
 }
