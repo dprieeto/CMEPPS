@@ -18,10 +18,12 @@ public class Movimiento {
 	 * D es un cargo en la cuenta.
 	 * H un ingreso en la cuenta.
 	 */
-	public enum signo { // publica para que pueda usarse fuera de la clase.
+	public enum Signo { // publica para que pueda usarse fuera de la clase.
 		D,
 		H;
 	}
+	
+	private Signo signo;
 	
 	/**
 	 * Concepto de la retirada/ingreso del dinero.
@@ -34,10 +36,11 @@ public class Movimiento {
 	 * @param detalle
 	 * @param signo
 	 */
-	public Movimiento(double importe, String detalle, signo signo) {
+	public Movimiento(double importe, String detalle, Signo signo) {
 		super();
 		this.importe = importe;
 		this.detalle = detalle;
+		this.signo = signo;
 	}
 
 	/**
@@ -66,5 +69,17 @@ public class Movimiento {
 	 */
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
-	}	
+	}
+	
+	/**
+	 * Verifica si se puede hacer un reintegro siempre que el saldo final sea menor a -500€.
+	 * Devuelve true si se puede hacer el reintegro, false en caso contrario.
+	 * @param reintegro
+	 * @return
+	 */
+	private boolean permiteDescubierto(double reintegro) {
+		boolean permitir = false;
+		
+		return permitir;
+	}
 }
