@@ -1,5 +1,6 @@
 package Test;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -65,7 +66,14 @@ class CuentaTest {
 	@DisplayName("Realiza un prueba de las transacciones")
 	void testMovimiento(TestInfo info) {
 		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
-		
-		System.out.println(c1.toString());
+		c1.retirar(200);
+		assertTrue(c2.retirar(350));
+		c1.ingresar(100);
+		assertTrue(c2.retirar(200));
+		assertTrue(c2.retirar(150));
+		assertTrue(c1.retirar(200));
+		c2.ingresar(50);
+		assertTrue(c2.retirar(100));
+		System.out.println(c1.toString() + c2.toString());
 	}
 }

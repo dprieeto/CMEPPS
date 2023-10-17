@@ -96,15 +96,22 @@ public class Cuenta {
 	}
 	
 	/**
-	 * Retira dinero y actualiza la cuenta del cliente.
+	 
 	 * @param importe
 	 */
-	public void retirar(double importe) {
+	/**
+	 * * Retira dinero y actualiza la cuenta del cliente.
+	 * @param importe
+	 * @return true si permite hacer el reintegro, false en caso contrario
+	 */
+	public boolean retirar(double importe) {
+		boolean correcto = false;
 		if(permiteDescubierto(importe)) {
 			this.setSaldo(this.getSaldo() - importe);
 			this.mMovimiento.add(new Movimiento(importe, "Reintegro", Signo.D));
+			correcto = true;
 		}
-		
+		return correcto;		
 	}
 	
 	/**
@@ -122,7 +129,7 @@ public class Cuenta {
 
 	@Override
 	public String toString() {
-		String s = "##########################" + "\n-Cuenta: " + this.numero + "\nSaldo inicial: "+ this.saldo_inicial + "€";
+		String s = "\n##########################" + "\n-Cuenta: " + this.numero + "\nSaldo inicial: "+ this.saldo_inicial + "€";
 		for(int i = 0; i < mMovimiento.size(); i++) {
 			s += mMovimiento.get(i).toString();
 		}
