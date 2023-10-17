@@ -14,11 +14,13 @@ import Sesion3.Cuenta;
 
 class CuentaTest {
 	
-	private static Cuenta cuenta;
+	private static Cuenta cuenta, c1, c2;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		cuenta = new Cuenta("2038 1234", "Prieto", 1000);
+		//c1 = new Cuenta("12345", "Paco", 50);
+		c2 = new Cuenta("67890", "Pepe", 0);
 		System.out.println("->Ejecutando Before all: configuracion antes de todas las pruebas");
 	}
 
@@ -59,11 +61,11 @@ class CuentaTest {
 		assertEquals(saldo, cuenta.getSaldo());
 	}
 	
-	// hacwer en la version 4, un caso de prueba(1 metodo que haga toda la version 4), hacer list movimiento
 	@Test
 	@DisplayName("Realiza un prueba de las transacciones")
 	void testMovimiento(TestInfo info) {
 		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
-		
+
+		System.out.println(c1.toString());
 	}
 }

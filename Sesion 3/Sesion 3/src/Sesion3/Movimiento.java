@@ -85,4 +85,9 @@ public class Movimiento {
 		this.signo = signo;
 	}
 
+	@Override
+	public String toString() {
+		String s = "\n" + this.detalle + " de " + this.importe + "€";
+		return s;
+	}	
 }
