@@ -13,6 +13,11 @@ import org.junit.jupiter.api.TestInfo;
 
 import Sesion3.Cuenta;
 
+/**
+ * Aqui se realizan las pruebas unitarias de la clase Cuenta
+ * para gestionar las transacciones de una cuenta bancaria.
+ * @author David Prieto Araujo
+ */
 class CuentaTest {
 	
 	private static Cuenta cuenta, c1, c2;
@@ -66,14 +71,14 @@ class CuentaTest {
 	@DisplayName("Realiza un prueba de las transacciones")
 	void testMovimiento(TestInfo info) {
 		System.out.println("Ejecutando prueba: " + info.getTestMethod().get().getName());
-		c1.retirar(200);
+		assertTrue(c1.retirar(200));
 		assertTrue(c2.retirar(350));
 		c1.ingresar(100);
-		assertTrue(c2.retirar(200));
+		assertFalse(c2.retirar(200));
 		assertTrue(c2.retirar(150));
 		assertTrue(c1.retirar(200));
 		c2.ingresar(50);
-		assertTrue(c2.retirar(100));
+		assertFalse(c2.retirar(100));
 		System.out.println(c1.toString() + c2.toString());
 	}
 }
