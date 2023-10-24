@@ -3,7 +3,16 @@
  */
 package miHexagonal.db_driven_adapter;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import miHexagonal.core.domain.Book;
+import miHexagonal.core.domain.BookDoesNotExistException;
 import miHexagonal.core.driven_ports.BookRepository;
+import miHexagonal.db_driven_adapter.domain.BookEntity;
+import miHexagonal.db_driven_adapter.jparepository.HAAJpaRepository;
 
 /**
  * @author David Prieto Araujo
